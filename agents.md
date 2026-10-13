@@ -1,0 +1,25 @@
+## Tool Calls
+Issue one command per tool call. Do not use pipes, &&, ;, or command substitution---supply paths as arguments rather than calling `cd`. Do not prefix commands with environment variable assignments unless unavoidably necessary. Do not add echo statements to annotate output. Assume the following commands are pre-approved:
+- grep
+- rg
+- sed
+- cat
+- awk
+- find
+- git show
+- sleep
+- timeout
+- tail
+- head
+- cat
+- ps
+- ls
+- strings
+- nproc
+- free
+- nix derivation show
+- nix eval
+- nix flake metadata
+- nix log
+- nix store prefetch-file
+- wc

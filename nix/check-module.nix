@@ -5,18 +5,15 @@
 }:
 
 pkgs.testers.nixosTest {
-  name = "donetick-module-smoke";
-
+  name = "donetick-module-healthcheck";
   nodes.machine = { ... }: {
     imports = [ self.nixosModules.donetick ];
-
+    system.stateVersion = "26.05";
     services.donetick = {
       enable = true;
-      secrets.jwtSecretFile = pkgs.writeText "jwt-secret" "this-is-a-very-long-test-secret-that-is-definitely-32-chars";
+      secrets.jwtSecretFile = pkgs.writeText "jwt-secret" "this-is-definitely-32-characters";
       server.port = 2021;
     };
-
-    system.stateVersion = "24.11";
   };
 
   testScript = ''
